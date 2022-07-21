@@ -20,11 +20,11 @@ const CharacterProfile = () =>{//Listar personajes en tarjeta
     return(
         <div style={{padding:"30px",}}>
             {(character)?(<div>
-                <img src={character.image}/>
+                <img src={character.image}/><br/>
                 Genero: {character.gender} <br/>
                 Especie: {character.species} <br/>
                 Ubicación: {character?.location?.name}
-            </div>):null
+            </div>):<h1>Loading...</h1>
 
             }
             

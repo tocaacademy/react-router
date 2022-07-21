@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route, } from 'react-router-dom'
 
 import EpisodesRoute from './routes/episodes';
 import CharactersRoute from './routes/characters';
-import CharacterProfile from './Views/Characters/profile';
+import ProfileRoute from './routes/profile';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,9 +14,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />}>
-          <Route path='characters' element={<CharactersRoute />}>
-              <Route path=":characterID" element={<CharacterProfile />} />
-          </Route>
+          <Route path='characters' element={<CharactersRoute />}/>
+          <Route path="characters/:characterID" element={<ProfileRoute />} />
           <Route path='episodes' element={<EpisodesRoute />}/>
           <Route
               path="*"
