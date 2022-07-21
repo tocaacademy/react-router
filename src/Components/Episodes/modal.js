@@ -1,6 +1,7 @@
 import React, {Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { getEpisodes } from '../../Services/Characters/actions';
+import { Link,Outlet  } from 'react-router-dom'
 
 const getIDs = (epis)=>{
     const ids = epis.map(url=>url.split("/")[5])
@@ -11,7 +12,7 @@ const getIDs = (epis)=>{
 class EpisodesModal extends Component {
   constructor(props) {
     super(props);
-    const { episodes, buttonLabel} = this.props
+    const {  episodes, buttonLabel} = this.props
     this.state = {
       modal: false,
       episodes:[],
@@ -75,6 +76,15 @@ class EpisodesModal extends Component {
             <Button color="secondary" onClick={this.toggle}>Cerrar modal </Button>
           </ModalFooter>
         </Modal>
+
+        <Link
+          to={`${this.props.characterID}`}
+          key={this.props.characterID}
+        >
+          Ver perfil
+        </Link>
+
+        <Outlet />
       </div>
       </>
     );

@@ -6,7 +6,7 @@ import {
 import EpisodesModal from '../Episodes/modal';
 
 const Character = (props) => {
-  const {name, image, species, gender, created, location, episode} = props.character
+  const {id, name, image, species, gender, created, location, episode} = props.character
   return (
     <div style={{width:"350px"}}>
       <Card>
@@ -25,7 +25,8 @@ const Character = (props) => {
                   </CardText>
 
           <EpisodesModal episodes={episode} 
-                          buttonLabel="Ver Episodios"/>
+                          buttonLabel="Ver Episodios"
+                          characterID={id}/>
         </CardBody>
       </Card>
     </div>
