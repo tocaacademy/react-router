@@ -83,8 +83,6 @@ class EpisodesModal extends Component {
         >
           Ver perfil
         </Link>
-
-        <Outlet />
       </div>
       </>
     );
