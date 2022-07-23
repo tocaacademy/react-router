@@ -52,7 +52,7 @@ class EpisodesModal extends Component {
     return (
       <>
        <div>
-        <Button color="danger" onClick={this.getEpisodesByCharacter}>{buttonLabel}</Button>
+        
         <Modal isOpen={modal} toggle={this.toggle} scrollable={true}>
           <ModalHeader toggle={this.toggle}>Episodios</ModalHeader>
           <ModalBody> 
@@ -76,13 +76,16 @@ class EpisodesModal extends Component {
             <Button color="secondary" onClick={this.toggle}>Cerrar modal </Button>
           </ModalFooter>
         </Modal>
-
-        <Link
-          to={`${this.props.characterID}`}
-          key={this.props.characterID}
-        >
-          Ver perfil
-        </Link>
+        <div style={{display:"flex", flexFlow:"row wrap", justifyContent:"space-between", paddingRight:20}}>
+          <Button color="danger" onClick={this.getEpisodesByCharacter}>{buttonLabel}</Button>
+          <Link
+            to={`${this.props.characterID}`}
+            key={this.props.characterID}
+          >
+            Ver perfil
+          </Link>
+        </div>
+        
       </div>
       </>
     );

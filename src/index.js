@@ -14,6 +14,15 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />}>
+          <Route
+          index
+          element={
+            <main style={{ padding: "10rem", textAlign:"center" }}>
+              <h1 style={{fontSize:"4rem"}}>RICKY AND MORTHI</h1>
+              <p style={{fontSize:"2rem"}}>TOCA, Academy</p>
+            </main>
+          }
+        />
           <Route path='characters' element={<CharactersRoute />}/>
           <Route path="characters/:characterID" element={<ProfileRoute />} />
           <Route path='episodes' element={<EpisodesRoute />}/>
