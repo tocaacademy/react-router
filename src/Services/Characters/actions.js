@@ -20,3 +20,14 @@ export const getEpisodes= async(ids)=>{
 
     return episodes.data
 }
+
+export const filterCharacters= async(name)=>{
+    try {
+        const characters = await axios.get(`https://rickandmortyapi.com/api/character/?name=${name}`)
+    
+        return characters.data.results
+    } catch (error) {
+        return []
+    }
+    
+}
